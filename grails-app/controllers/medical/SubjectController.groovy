@@ -1,13 +1,24 @@
 package medical
 
-class SubjectController {
+import grails.plugin.springsecurity.annotation.Secured
 
+class SubjectController {
+    @Secured("ROLE_ADMIN")
     def index() {
-    render "subject index"
+
     }
+
+    @Secured("ROLE_USER")
+    def userMain(){
+//           render "This is the main page for the user"
+
+    }
+    @Secured("ROLE_ADMIN")
     def form(){
 
     }
+
+    @Secured("ROLE_ADMIN")
     def save(){
 
         def subject = new Subject(params)

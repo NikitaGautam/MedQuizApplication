@@ -12,14 +12,47 @@
 		<link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon">
 		<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
 		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
-  		<asset:stylesheet src="application.css"/>
-		<asset:javascript src="application.js"/>
-		<g:layoutHead/>
+    <asset:javascript src="jquery-1.11.1.min.js"/>
+    <asset:stylesheet src="bootstrap.min.css"/>
+    <asset:javascript src="bootstrap.min.js" />
+    <asset:stylesheet src="application.css"/>
+    <asset:javascript src="application.js"/>
+    <asset:javascript src="jquery.validate.min.js" />
+    <asset:stylesheet src="quiz.css"/>
+
+        %{--<asset:stylesheet src="bootstrap-theme.min.css"/>--}%
+    <script>
+        $(function() {
+                 $('.register-form').hide();
+
+
+            $('#login-form-link').on("click",function(e) {
+                $("#login-form").delay(100).fadeIn(100);
+                $("#register-form").fadeOut(100);
+                $('#register-form-link').removeClass('active');
+                $(this).addClass('active');
+                e.preventDefault();
+                   $('.register-form').hide();
+            });
+            $('#register-form-link').on("click",function(e) {
+                $(".register-form").delay(100).fadeIn(100);
+                $("#login-form").fadeOut(100);
+                $('#login-form-link').removeClass('active');
+                $(this).addClass('active');
+                $('.register-form').show();
+
+                e.preventDefault();
+            });
+
+        });
+
+    </script>
+		%{--<g:layoutHead/>--}%
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image src="grails_logo.png" alt="Grails"/></a></div>
+		%{--<div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image src="grails_logo.png" alt="Grails"/></a></div>--}%
 		<g:layoutBody/>
-		<div class="footer" role="contentinfo"></div>
-		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
+		%{--<div class="footer" role="contentinfo"></div>--}%
+		%{--<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>--}%
 	</body>
 </html>

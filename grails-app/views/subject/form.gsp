@@ -8,18 +8,37 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title></title>
+    <meta name='layout' content='main'/>
+    <title>Subject Add</title>
 </head>
 
 <body>
-    <g:form controller="subject" action="save">
 
-        <g:textField name="subject_name">
+<div class="container">
+    <br><br>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-login">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <g:form controller="subject" action="save">
 
-        </g:textField>
-        <g:actionSubmit value="Save">
+                                <g:textField name="subject_name">
 
-        </g:actionSubmit>
-    </g:form>
+                                </g:textField>
+                                <g:actionSubmit value="Save">
+
+                                </g:actionSubmit>
+                            </g:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
+
 </html>

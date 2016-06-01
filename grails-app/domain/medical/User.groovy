@@ -1,14 +1,61 @@
 package medical
 
-class User {
+import groovy.transform.EqualsAndHashCode
+import groovy.transform.ToString
+
+@EqualsAndHashCode(includes = 'username')
+@ToString(includes = 'username', includeNames = true, includePackage = false)
+class User implements Serializable {
+
+    private static final long serialVersionUID = 1
+
+    transient springSecurityService
+
     String fname
     String lname
-    String email
+    String username
     String password
+    String email
+    boolean enabled = true
+    boolean accountExpired
+    boolean accountLocked
+    boolean passwordExpired
+
+    User(String username, String password) {
+        this()
+        this.username = username
+        this.password = password
+    }
+
+    Set<Role> getAuthorities() {
+        UserRole.findAllByUser(this)*.role
+    }
+
+    def beforeInsert() {
+        encodePassword()
+    }
+
+    def beforeUpdate() {
+        if (isDirty('password')) {
+            encodePassword()
+        }
+    }
+
+    protected void encodePassword() {
+        password = springSecurityService?.passwordEncoder ? springSecurityService.encodePassword(password) : password
+    }
+
+    static transients = ['springSecurityService']
 
     static constraints = {
-        fname blank: false, nullable: false
-        password blank: false, nullable:false
-        email blank: false, email: true, unique: true
+        username blank: false, unique: true
+        password blank: false
+        fname nullable: true
+        lname nullable: true
+        email nullable: true
+    }
+
+    static mapping = {
+        password column: '`password`'
     }
 }
