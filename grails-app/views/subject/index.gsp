@@ -13,13 +13,13 @@
 </head>
 
 <body>
-<nav class="navbar navbar-default" style="background-color: darkblue">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#"  style="color: #ffffff">Admin Home</a>
+            <a class="navbar-brand" href="#"  style="color: black">Admin Home</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="#"  style="color: #ffffff">MedQuiz</a></li>
+            <li><a href="#"  style="color: black"></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <g:form controller="logout" action="index">
@@ -35,8 +35,8 @@
         <br><br>
         <form class="col-lg-12">
             <div class="input-group" style="width:340px;text-align:center;margin:0 auto;">
-                  <g:link controller="subject" action="form" name="addSub" class="btn btn-success" style="height: 65px; width: 100%; color: #ffffff; font-size: large">Add Subject</g:link><br><br>
-                  <g:link controller="questionAnswer" action="form" name="addQues" class="btn btn-warning" style="height: 65px; width: 100%; color: #ffffff; font-size: large">Add Question</g:link>
+                  <g:link controller="subject" action="form" name="addSub" class="btn btn-primary" style="height: 65px; width: 100%; color: #ffffff; font-size: large">Add Subject</g:link><br><br>
+                  <g:link controller="questionAnswer" action="form" name="addQues" class="btn btn-primary" style="height: 65px; width: 100%; color: #ffffff; font-size: large">Add Question</g:link>
 
             </div>
         </form>

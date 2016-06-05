@@ -5,7 +5,7 @@
   Time: 8:05 PM
 --%>
 
-<%@ page import="medical.Subject" contentType="text/html;charset=UTF-8" %>
+<%@ page import="medical.User; medical.Subject" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <meta name='layout' content='main'/>
@@ -13,17 +13,17 @@
 </head>
 
 <body>
-<nav class="navbar navbar-default" style="background-color: darkblue">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#"  style="color: #ffffff">User Home</a>
+            <g:link class="navbar-brand" href="#" style="color: #000000;" >User</g:link>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="#"  style="color: #ffffff">MedQuiz</a></li>
+            <li><a href="#" style="color: #000000;"></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <g:form controller="logout" action="index">
-                <g:submitButton  style="margin-left: 70%; width: 180px; font-size: large; margin-top: 1%;" class="btn btn-danger" name="Logout"></g:submitButton>
+                <g:submitButton  style="margin-left: 70%; width: 130px; font-size: medium; margin-top: 1%;" class="btn btn-danger" name="Logout"></g:submitButton>
             </g:form>
         </ul>
     </div>

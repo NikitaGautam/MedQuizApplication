@@ -7,7 +7,7 @@
 
 <body>
 <div style="width: 100%; background-color: darkblue; color: #ffffff">
-    <br><h2 align="center">Medical Quiz Application</h2><br>
+    <br><h3 align="center">Medical Quiz Application</h3><br>
 </div>
 <div class="container">
     <br><br>
