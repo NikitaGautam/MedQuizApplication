@@ -21,7 +21,6 @@
 <g:form controller="questionAnswer" action = "quiz" class="form">
 
 
-    ${params.rand}
     <g:set var="question" value="${randomQuestions.get(index)}"/>
     <h1 class="question">${question.question}</h1>
     <div class="btn-group-lg btn-group" data-toggle="buttons">

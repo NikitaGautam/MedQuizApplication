@@ -5,17 +5,21 @@ import grails.plugin.springsecurity.annotation.Secured
 class QuestionAnswerController {
     @Secured("ROLE_USER")
     def quiz() {
-//       [question: QuestionAnswer.findBySubject(Subject.findById(params.id))]
-        String ques = params.randomQuestions
-        if(params.randomQuestions)
-            List<QuestionAnswer> randomQuestions = new ArrayList<>(params.randomQuestions)
-        else
-            List<QuestionAnswer> randomQuestions = new ArrayList<>()
+        List<QuestionAnswer> randomQuestions = new ArrayList<>()
 
-        println "fasfasjdflkasjdf"
-        println randomQuestions
+        if(params.randomQuestions) {
+            String questions = params.randomQuestions.split(',');
+            for(String q in questions) {
+                Scanner fi = new Scanner(q as String);
+                fi.useDelimiter("[^\\p{Alnum},\\.-]");
+                if (fi.hasNextInt()) {
+                    def id = fi.nextInt()
+                    randomQuestions.add(QuestionAnswer.findById(id))
+                }
+            }
+        }
+
         if(randomQuestions) {
-            println params.options + "fasfasjdflkasjdf"
             [index: params.index + 1, randomQuestions: randomQuestions]
         }else
 
