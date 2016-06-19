@@ -23,37 +23,44 @@
 
     <g:set var="question" value="${randomQuestions.get(index)}"/>
     <h1 class="question">${question.question}</h1>
-    <div class="btn-group-lg btn-group" data-toggle="buttons">
+    <div class="btn-group-lg btn-group" data-toggle="buttons" id="check">
         <row>
             <div class="col-lg-6">
                 <label class="btn btn-primary">
-                    <input type="radio" name="options" id="option1" value="1"> ${question.ans1}
+                    <g:radio name="options"  value="1"></g:radio> ${question.ans1}
                 </label>
             </div>
             <!--<span>or</span>-->
             <div class="col-lg-6">
                 <label class="btn btn-primary">
-                    <input type="radio" name="options" id="option2" value="2"> "${question.ans2}"
+                    <g:radio name="options" value="2"> </g:radio> ${question.ans2}
                 </label>
             </div>
             <div class="col-lg-6">
                 <label class="btn btn-primary">
-                    <input type="radio" name="options" id="option2" value="3"> "${question.ans3}"
+                    <g:radio name="options" value="3"> </g:radio> ${question.ans3}
                 </label>
             </div>
             <div class="col-lg-6">
                 <label class="btn btn-primary">
-                    <input type="radio" name="options" id="option2" value="4"> "${question.ans3}"
+                    <g:radio name="options" value="4"> </g:radio>${question.ans3}
                 </label>
             </div>
 
             <g:hiddenField name="index" value="${index}"/>
             <g:hiddenField name="randomQuestions" value="${randomQuestions}"/>
+            <g:hiddenField name="isCorrect" value="${isCorrect}"/>
+
         </row>
     </div>
-    <input type = "submit" class="btn btn-primary" style="height: 40px; width: 40%; color: #ffffff; font-size: large" value="Submit & Next">
+
+
+    <input id="sub" type = "submit" class="btn btn-primary" style="height: 40px; width: 40%; color: #ffffff; font-size: large" value="Submit & Next">
 
 </g:form>
+<br><br>
+
+<g:link name="homeBack" controller="subject" action="userMain">Back To Home</g:link>
 
 </body>
 </html>
