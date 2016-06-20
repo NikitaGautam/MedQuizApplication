@@ -80,8 +80,7 @@
                                     <div class="row">
                                         <div class="col-sm-6 col-sm-offset-3">
                                             %{--<g:actionSubmit name="ques-submit" id="question-submit" tabindex="4" class="form-control btn btn-register" value="Submit"></g:actionSubmit>--}%
-                                     <g:actionSubmit action="saveForm"  class="btn btn-primary" style="height: 40px; width: 40%; color: #ffffff; font-size: large; width: 60%; margin-right: 35%; margin-left: 20%;" value="Save"></g:actionSubmit>
-                                                   %{--<input type="submit" name="submit" value="submit">--}%
+                                          <g:actionSubmit action="saveForm"  class="btn btn-primary" style="height: 40px; width: 40%; color: #ffffff; font-size: large; width: 60%; margin-right: 35%; margin-left: 20%;" value="Save"></g:actionSubmit>
                                         </div>
                                     </div>
                                 </div>
