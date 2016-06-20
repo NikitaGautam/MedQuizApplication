@@ -21,22 +21,28 @@ class QuestionAnswerController {
                     def questionAnswer = QuestionAnswer.findById(id)
                     if(questionAnswer)randomQuestions.add(questionAnswer)
             }
-//            println(randomQuestions)
+            println(randomQuestions)
         }
 
+        def score = params.score
         if(randomQuestions) {
             def correctValue = randomQuestions.get(params.index as int).correct
             if ((params.options as int) == (correctValue)) {
                 println("correct")
-                [index: (params.index as int) + 1, randomQuestions: randomQuestions, isCorrect: (params.isCorrect as int) + 1]
-
+                score++
 
             }else {
                 println("incorrect")
-                [index: (params.index as int) + 1, randomQuestions: randomQuestions, isCorrect: params.isCorrect]
             }
 
+            if(params.index as int  == randomQuestions.size() - 1) {
 
+                params.score = score
+                redirect(action: 'score', params: params)
+                return
+            }
+
+            [index: (params.index as int) + 1, randomQuestions: randomQuestions, score: score]
         }
         else {
 
@@ -46,7 +52,7 @@ class QuestionAnswerController {
 //            println(randomQuestions)
 //            println randomQuestions.size()
 
-            [randomQuestions: randomQuestions, index: 0, isCorrect: 0, subject: Subject.findById(params.id).subject_name]
+            [randomQuestions: randomQuestions, score: 0, index: 0, subject: Subject.findById(params.id).subject_name]
         }
     }
 
@@ -73,6 +79,7 @@ class QuestionAnswerController {
     @Secured("ROLE_USER")
     def score(){
 
+        [score: params.score]
     }
 
 
