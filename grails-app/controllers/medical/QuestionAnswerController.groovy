@@ -29,16 +29,11 @@ class QuestionAnswerController {
             if ((params.options as int) == (correctValue)) {
                 println("correct")
                 [index: (params.index as int) + 1, randomQuestions: randomQuestions, isCorrect: (params.isCorrect as int) + 1]
-                if((((params.index as int) +1)) >= randomQuestions.size()){
-                    redirect(controller: "questionAnswer", action: "score", params: [score: (params.isCorrect as int) + 1])
-                }
+
 
             }else {
                 println("incorrect")
                 [index: (params.index as int) + 1, randomQuestions: randomQuestions, isCorrect: params.isCorrect]
-                if((((params.index as int) +1)) >= randomQuestions.size()){
-                    redirect(controller: "questionAnswer", action: "score",params: [score: params.isCorrect])
-                }
             }
 
 
@@ -51,7 +46,7 @@ class QuestionAnswerController {
 //            println(randomQuestions)
 //            println randomQuestions.size()
 
-            [randomQuestions: randomQuestions, index: 0, isCorrect: 0]
+            [randomQuestions: randomQuestions, index: 0, isCorrect: 0, subject: Subject.findById(params.id).subject_name]
         }
     }
 
@@ -77,6 +72,12 @@ class QuestionAnswerController {
 
     @Secured("ROLE_USER")
     def score(){
+
+    }
+
+
+    @Secured("ROLE_USER")
+    def test(){
 
     }
 }

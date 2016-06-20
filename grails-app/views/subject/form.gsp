@@ -53,6 +53,8 @@
                                 </g:actionSubmit>
                             </g:form>
                         </div>
+
+                        <g:link controller="subject" action="index" style="width: 60%; margin-right: 35%; margin-left: 45%"> Back to Home</g:link>
                     </div>
                 </div>
             </div>
