@@ -3,9 +3,11 @@ package medical
 import grails.plugin.springsecurity.annotation.Secured
 
 class QuestionAnswerController {
+
+    public   String category = ""
+
     @Secured("ROLE_USER")
     def quiz() {
-
         List<QuestionAnswer> randomQuestions = new ArrayList<>()
 //        println(params.randomQuestions)
         if(params.randomQuestions) {
@@ -38,6 +40,8 @@ class QuestionAnswerController {
             if(params.index as int  == randomQuestions.size() - 1) {
 
                 params.score = score
+                params.subject = category
+
                 redirect(action: 'score', params: params)
                 return
             }
@@ -51,6 +55,7 @@ class QuestionAnswerController {
             Collections.shuffle(randomQuestions, new Random(seed))
 //            println(randomQuestions)
 //            println randomQuestions.size()
+            category = Subject.findById(params.id).subject_name
 
             [randomQuestions: randomQuestions, score: 0, index: 0, subject: Subject.findById(params.id).subject_name]
         }
@@ -79,7 +84,7 @@ class QuestionAnswerController {
     @Secured("ROLE_USER")
     def score(){
 
-        [score: params.score]
+        [score: params.score, subject: params.subject]
     }
 
 

@@ -38,7 +38,7 @@
 <div class="container" >
     <br><br>
     <div class="row">
-        <div class="col-md-6 col-md-offset-3" style="width: 60%; margin-right: 40%; margin-left: 20%">
+        <div class="col-md-6 col-md-offset-3" style="width: 80%; margin-right: 20%; margin-left: 13%">
             <div class="panel panel-login">
                 <div class="panel-body">
                     <div class="panel-heading">
@@ -55,7 +55,7 @@
                                     <hr>
                                 </div>
 
-                                <div class="btn-group-lg btn-group" data-toggle="buttons" id="check" style="width: 400px">
+                                <div class="btn-group-lg btn-group" data-toggle="buttons" id="check" style="width: auto">
                                     <row>
                                         <div class="col-lg-6" >
                                             <label class="btn btn-primary">

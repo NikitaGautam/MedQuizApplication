@@ -28,26 +28,35 @@
         </ul>
     </div>
 </nav>
-<div class="container" style="margin-left: 35%; margin-right: 30%; width: 100%">
+
+<div class="container">
+    <br><br>
     <div class="row">
-        <div class="col-xs-18 col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <asset:image src="score.png" width="500"></asset:image>
-                <div class="caption">
-                    <h4>Thumbnail label</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-                    <a href="#" class="btn btn-default btn-xs pull-right" role="button">
-                        <i class="glyphicon glyphicon-edit"></i></a>
-                <a href="#" class="btn btn-info btn-xs" role="button">Button</a>
-                <a href="#" class="btn btn-default btn-xs" role="button">Button</a>
+        <div class="col-md-6 col-md-offset-3" style="width: 60%; margin-right: 40%; margin-left: 20%">
+            <div class="panel panel-login">
+                <div class="panel-heading">
+
+                    <asset:image src="score.png" width="500"></asset:image>
+                    <hr>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12" align="center">
+                                <h1 style="color: forestgreen">${subject}</h1>
+
+                                <h2>Current Score:</h2>
+                                <h3 style="color: red">${score}</h3>
+                        </div>
+
+                        <g:link controller="subject" action="userMain" style="width: 60%; margin-right: 35%; margin-left: 45%"> Back to Home</g:link>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
 
 
-
-    </div><!--/row-->
-</div><!--/container -->
 </body>
 </html>
