@@ -82,7 +82,7 @@
 
                                         <g:hiddenField name="index" value="${index}"/>
                                         <g:hiddenField name="randomQuestions" value="${randomQuestions}"/>
-                                        <g:hiddenField name="isCorrect" value="${isCorrect}"/>
+                                        <g:hiddenField name="score" value="${score}"/>
 
                                     </row>
                                 </div>

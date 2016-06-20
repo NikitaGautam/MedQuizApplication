@@ -14,5 +14,6 @@
 
 <body>
 Score Page
+<br>Your Score is ${score}
 </body>
 </html>
